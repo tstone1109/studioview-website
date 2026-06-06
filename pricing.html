@@ -448,32 +448,34 @@ footer {
 @media (max-width: 768px) {
   /* Nav collapses: logo centered, buttons as 2-col grid below */
   nav {
-    position: sticky;
-    height: auto;
-    padding: 14px 18px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 10px;
+    position: fixed;
+    height: 56px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-items: center;
+    justify-content: space-between;
+    gap: 0;
   }
-  .logo { width: 100%; justify-content: center; }
-  .logo-text { font-size: 18px; letter-spacing: 2px; }
+  .logo { width: auto; justify-content: flex-start; }
+  .logo-text { font-size: 17px; letter-spacing: 1.8px; }
+  .logo-img { width: 32px; height: 32px; }
   .nav-links { display: none; }
   .nav-actions {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: auto;
   }
   .nav-login, .nav-cta {
-    width: 100%; min-height: 44px;
-    padding: 10px 12px;
-    font-size: 13px; letter-spacing: 1.2px;
-    border-radius: 8px;
+    width: auto; min-height: 34px;
+    padding: 7px 13px;
+    font-size: 11px; letter-spacing: 1.2px;
+    border-radius: 6px;
     display: flex; align-items: center; justify-content: center;
+    white-space: nowrap;
   }
-  .page-hero { padding: 64px 20px 56px; }
+  .page-hero { padding: 84px 20px 56px; }
   .page-label { letter-spacing: 3.5px; }
   .page-title { font-size: clamp(36px,11vw,56px); letter-spacing: -1px; }
   .page-sub { font-size: 15.5px; max-width: 92%; }
@@ -490,16 +492,20 @@ footer {
   }
   .f-links {
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
   }
   .f-links a {
-    display: flex; align-items: center;
-    min-height: 40px; padding: 6px 10px;
-    border: 1px solid rgba(0,200,255,0.07);
-    border-radius: 6px; background: rgba(0,200,255,0.02);
+    display: block;
+    padding: 8px 0;
+    border: none;
+    border-bottom: 1px solid rgba(0,200,255,0.05);
+    background: transparent;
+    font-size: 14px;
+    color: var(--muted);
   }
+  .f-links a:last-child { border-bottom: none; }
   .f-copy { width: 100%; text-align: center; }
   .page-hero > .hero-btns {
     display: grid !important;
