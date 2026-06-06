@@ -53,7 +53,7 @@ body::after{
 
 /* NAV */
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:100;
+  position:relative;top:auto;left:auto;right:auto;z-index:100;
   padding:18px 48px;
   display:flex;align-items:center;justify-content:space-between;
   background:rgba(4,6,8,0.92);
@@ -109,7 +109,7 @@ nav{
 .hero{
   min-height:100vh;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:140px 40px 80px;
+  padding:80px 40px 80px;
   position:relative;text-align:center;overflow:hidden;
   z-index:1;
 }
@@ -584,7 +584,7 @@ footer{
 @media(max-width:768px){
   nav{padding:14px 20px;}
   .nav-links{display:none;}
-  .hero{padding:100px 20px 60px;}
+  .hero{padding:70px 20px 60px;}
   .mockup-content{grid-template-columns:1fr 1fr;padding:16px;}
   .stats-inner{flex-wrap:wrap;}
   .stat-item{border-right:none;border-bottom:1px solid rgba(0,200,255,0.08);padding:20px 32px;}
@@ -971,6 +971,32 @@ a,button{touch-action:manipulation;}
   .stat-item:nth-last-child(-n+2){border-bottom:1px solid rgba(0,200,255,0.08)!important;}
   .stat-item:last-child{border-bottom:none!important;}
   .footer-links{grid-template-columns:1fr;}
+}
+
+
+/* ---------- NAV SCROLL FIX: keep Log In / Sign Up only at the top ---------- */
+nav{
+  position:relative!important;
+  top:auto!important;
+  left:auto!important;
+  right:auto!important;
+}
+
+@media(max-width:768px){
+  nav{
+    position:relative!important;
+    top:auto!important;
+  }
+
+  .hero{
+    padding-top:56px!important;
+  }
+}
+
+@media(max-width:420px){
+  .hero{
+    padding-top:64px!important;
+  }
 }
 
 </style>
