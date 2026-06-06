@@ -398,18 +398,20 @@ nav.scrolled { border-bottom-color: rgba(0,200,255,0.18); }
 footer {
   padding: 36px 52px;
   border-top: 1px solid rgba(0,200,255,0.08);
-  display: flex; align-items: center; justify-content: space-between;
-  flex-wrap: wrap; gap: 20px;
+  display: flex; align-items: center; justify-content: center;
+  flex-wrap: wrap; gap: 20px 40px;
   position: relative; z-index: 1;
   background: rgba(3,5,7,0.9);
+  text-align: center;
 }
 .f-logo {
   font-family: 'Rajdhani', sans-serif; font-size: 16px; font-weight: 700;
   color: var(--white); text-decoration: none;
   display: flex; align-items: center; gap: 10px;
-  letter-spacing: 2px; text-transform: uppercase;
+  letter-spacing: 1px; text-transform: uppercase;
   white-space: nowrap;
 }
+.f-logo-text { display: flex; align-items: center; gap: 0; letter-spacing: 2px; }
 .f-links {
   display: flex; gap: 24px; list-style: none; flex-wrap: wrap;
   align-items: center;
@@ -492,16 +494,15 @@ footer {
   .bottom-cta { padding: 72px 20px; }
   footer {
     padding: 28px 20px;
-    flex-direction: column; align-items: center; gap: 20px; text-align: center;
+    flex-direction: column; align-items: center; gap: 16px; text-align: center;
   }
-  .f-logo { justify-content: center; }
-  .f-links { align-items: flex-start; width: 100%; }
-  .f-copy { text-align: center; width: 100%; }
+  .f-logo { justify-content: center; width: 100%; }
   .f-links {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    align-items: center;
+    gap: 0;
   }
   .f-links a {
     display: block;
@@ -511,8 +512,11 @@ footer {
     background: transparent;
     font-size: 14px;
     color: var(--muted);
+    width: 100%;
+    text-align: center;
   }
   .f-links a:last-child { border-bottom: none; }
+  .f-copy { text-align: center; width: 100%; }
   .f-copy { width: 100%; text-align: center; }
   .page-hero > .hero-btns {
     display: grid !important;
@@ -684,7 +688,7 @@ footer {
 <footer>
   <a href="index.html" class="f-logo">
     <div class="logo-img" style="width:34px;height:34px;"><img src="https://i.imgur.com/so3dDyB.png" alt="SV"/></div>
-    Studio <span style="color:var(--blue);margin-left:4px;">View</span>
+    <span class="f-logo-text">STUDIO&nbsp;<span style="color:var(--blue);">VIEW</span></span>
   </a>
   <ul class="f-links">
     <li><a href="how-it-works.html">How It Works</a></li>
