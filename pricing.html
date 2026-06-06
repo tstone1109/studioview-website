@@ -295,8 +295,8 @@ nav.scrolled { border-bottom-color: rgba(0,200,255,0.18); }
   border-radius: 3px; text-transform: uppercase; white-space: nowrap;
 }
 .price-tier {
-  font-family: 'Rajdhani', sans-serif; font-size: 10px;
-  font-weight: 700; letter-spacing: 4px; color: var(--muted);
+  font-family: 'Rajdhani', sans-serif; font-size: 13px;
+  font-weight: 700; letter-spacing: 3px; color: var(--muted);
   margin-bottom: 14px; text-transform: uppercase;
 }
 .price-amt {
@@ -309,6 +309,9 @@ nav.scrolled { border-bottom-color: rgba(0,200,255,0.18); }
 .price-amt sup {
   font-size: 22px; vertical-align: top; margin-top: 9px;
   display: inline-block; letter-spacing: 0;
+}
+.price-cents {
+  font-size: 32px; font-weight: 600; letter-spacing: 0;
 }
 .price-period { font-size: 12px; color: #2d4055; margin-bottom: 6px; }
 .price-credit { font-size: 12px; color: var(--blue); margin-bottom: 22px; font-style: italic; }
@@ -405,6 +408,7 @@ footer {
   color: var(--white); text-decoration: none;
   display: flex; align-items: center; gap: 10px;
   letter-spacing: 2px; text-transform: uppercase;
+  white-space: nowrap;
 }
 .f-links {
   display: flex; gap: 24px; list-style: none; flex-wrap: wrap;
@@ -488,8 +492,11 @@ footer {
   .bottom-cta { padding: 72px 20px; }
   footer {
     padding: 28px 20px;
-    flex-direction: column; align-items: flex-start; gap: 20px;
+    flex-direction: column; align-items: center; gap: 20px; text-align: center;
   }
+  .f-logo { justify-content: center; }
+  .f-links { align-items: flex-start; width: 100%; }
+  .f-copy { text-align: center; width: 100%; }
   .f-links {
     width: 100%;
     display: flex;
@@ -571,7 +578,7 @@ footer {
     <div class="price-card feat">
       <div class="price-badge">Most Popular</div>
       <div class="price-tier">Artist Select</div>
-      <div class="price-amt"><sup>$</sup>4<span style="font-size:30px;font-weight:600;">.99</span></div>
+      <div class="price-amt"><sup>$</sup>4<span class="price-cents">.99</span></div>
       <div class="price-period">/mo</div>
       <div class="price-credit">Includes $10/month in booking credits</div>
       <ul class="price-feats">
@@ -589,7 +596,7 @@ footer {
     </div>
     <div class="price-card">
       <div class="price-tier">Artist Gold</div>
-      <div class="price-amt"><sup>$</sup>14<span style="font-size:30px;font-weight:600;">.99</span></div>
+      <div class="price-amt"><sup>$</sup>14<span class="price-cents">.99</span></div>
       <div class="price-period">/mo</div>
       <div class="price-credit">Includes $30/month in booking credits</div>
       <ul class="price-feats">
@@ -629,7 +636,7 @@ footer {
     </div>
     <div class="price-card">
       <div class="price-tier">Studio Owner Select</div>
-      <div class="price-amt"><sup>$</sup>4<span style="font-size:30px;font-weight:600;">.99</span></div>
+      <div class="price-amt"><sup>$</sup>4<span class="price-cents">.99</span></div>
       <div class="price-period">/mo</div>
       <div class="price-credit">Includes $10/month in promo credits</div>
       <ul class="price-feats">
@@ -647,7 +654,7 @@ footer {
     <div class="price-card feat">
       <div class="price-badge">Most Popular</div>
       <div class="price-tier">Studio Owner Gold</div>
-      <div class="price-amt"><sup>$</sup>14<span style="font-size:30px;font-weight:600;">.99</span></div>
+      <div class="price-amt"><sup>$</sup>14<span class="price-cents">.99</span></div>
       <div class="price-period">/mo</div>
       <div class="price-credit">Includes $30/month in promo credits</div>
       <ul class="price-feats">
