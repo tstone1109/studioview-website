@@ -7,12 +7,6 @@
 <title>Studio View — Record with Purpose</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <style>
-/* ═══════════════════════════════════════════════════════════════
-   STUDIO VIEW — SHARED DESIGN SYSTEM v2
-   Applied across all 7 public landing pages
-═══════════════════════════════════════════════════════════════ */
-
-/* ── TOKENS ─────────────────────────────────────────────────── */
 :root {
   --black:   #030507;
   --black2:  #070b0f;
@@ -31,8 +25,6 @@
   --glow-m:  0 0 40px rgba(0,200,255,0.35);
   --glow-l:  0 0 60px rgba(0,200,255,0.45);
 }
-
-/* ── RESET & BASE ────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 body {
@@ -48,8 +40,6 @@ h1,h2,h3,h4,h5 { font-family: 'Rajdhani', sans-serif; line-height: 1.05; }
 a { color: inherit; }
 img, svg { max-width: 100%; display: block; }
 a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
-
-/* ── GRID LINES BACKGROUND ───────────────────────────────────── */
 body::after {
   content: '';
   position: fixed; inset: 0; pointer-events: none; z-index: 0;
@@ -58,8 +48,6 @@ body::after {
     linear-gradient(90deg, rgba(0,200,255,0.025) 1px, transparent 1px);
   background-size: 64px 64px;
 }
-
-/* ── NAV ─────────────────────────────────────────────────────── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 200;
   padding: 0 52px;
@@ -71,11 +59,7 @@ nav {
   transition: border-color 0.3s;
 }
 nav.scrolled { border-bottom-color: rgba(0,200,255,0.18); }
-
-.logo {
-  display: flex; align-items: center; gap: 11px;
-  text-decoration: none; flex-shrink: 0;
-}
+.logo { display: flex; align-items: center; gap: 11px; text-decoration: none; flex-shrink: 0; }
 .logo-img {
   width: 38px; height: 38px; border-radius: 8px;
   border: 1.5px solid rgba(0,200,255,0.35);
@@ -84,465 +68,94 @@ nav.scrolled { border-bottom-color: rgba(0,200,255,0.18); }
   display: flex; align-items: center; justify-content: center;
 }
 .logo-img img { width: 100%; height: 100%; object-fit: contain; }
-.logo-text {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 19px; font-weight: 700; letter-spacing: 2.5px;
-  color: var(--white); text-transform: uppercase;
-}
+.logo-text { font-family: 'Rajdhani', sans-serif; font-size: 19px; font-weight: 700; letter-spacing: 2.5px; color: var(--white); text-transform: uppercase; }
 .logo-text span { color: var(--blue); }
-
-.nav-links {
-  display: flex; align-items: center; gap: 28px;
-  list-style: none;
-}
-.nav-links a {
-  color: var(--muted);
-  text-decoration: none; font-size: 13px; font-weight: 400;
-  letter-spacing: 0.3px;
-  transition: color 0.2s;
-  position: relative;
-}
-.nav-links a::after {
-  content: ''; position: absolute; bottom: -4px; left: 0; right: 0;
-  height: 1px; background: var(--blue);
-  transform: scaleX(0); transition: transform 0.2s;
-  transform-origin: left;
-}
-.nav-links a:hover,
-.nav-links a.active { color: var(--white); }
-.nav-links a:hover::after,
-.nav-links a.active::after { transform: scaleX(1); }
-
-.nav-actions {
-  display: flex; align-items: center; gap: 10px; flex-shrink: 0;
-}
-.nav-login {
-  color: var(--chrome);
-  text-decoration: none; font-family: 'Rajdhani', sans-serif;
-  font-size: 13px; font-weight: 600; letter-spacing: 1.5px;
-  text-transform: uppercase; padding: 8px 16px;
-  border: 1px solid rgba(0,200,255,0.14); border-radius: var(--radius);
-  background: transparent;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
+.nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 13px; font-weight: 400; letter-spacing: 0.3px; transition: color 0.2s; position: relative; }
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px; background: var(--blue); transform: scaleX(0); transition: transform 0.2s; transform-origin: left; }
+.nav-links a:hover, .nav-links a.active { color: var(--white); }
+.nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
+.nav-actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+.nav-login { color: var(--chrome); text-decoration: none; font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; padding: 8px 16px; border: 1px solid rgba(0,200,255,0.14); border-radius: var(--radius); background: transparent; transition: all 0.2s; white-space: nowrap; }
 .nav-login:hover { color: var(--blue); border-color: rgba(0,200,255,0.35); }
-.nav-cta {
-  color: var(--black);
-  text-decoration: none; font-family: 'Rajdhani', sans-serif;
-  font-size: 13px; font-weight: 700; letter-spacing: 1.8px;
-  text-transform: uppercase; padding: 9px 22px;
-  background: var(--blue);
-  border: 1.5px solid var(--blue); border-radius: var(--radius);
-  transition: all 0.2s;
-  white-space: nowrap;
-  box-shadow: 0 0 16px rgba(0,200,255,0.2);
-}
-.nav-cta:hover {
-  background: transparent; color: var(--blue);
-  box-shadow: var(--glow-s);
-}
-
-/* ── PAGE HERO (inner pages) ─────────────────────────────────── */
-.page-hero {
-  padding: 148px 40px 88px;
-  text-align: center; position: relative; z-index: 1; overflow: hidden;
-}
-.hero-glow {
-  position: absolute; top: -40px; left: 50%; transform: translateX(-50%);
-  width: 640px; height: 420px;
-  background: radial-gradient(ellipse, rgba(0,200,255,0.07) 0%, transparent 68%);
-  pointer-events: none;
-}
-.page-label {
-  font-size: 10px; letter-spacing: 5px; color: var(--blue);
-  font-family: 'Rajdhani', sans-serif; font-weight: 700;
-  margin-bottom: 16px; text-transform: uppercase;
-  display: inline-flex; align-items: center; gap: 12px;
-}
+.nav-cta { color: var(--black); text-decoration: none; font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 1.8px; text-transform: uppercase; padding: 9px 22px; background: var(--blue); border: 1.5px solid var(--blue); border-radius: var(--radius); transition: all 0.2s; white-space: nowrap; box-shadow: 0 0 16px rgba(0,200,255,0.2); }
+.nav-cta:hover { background: transparent; color: var(--blue); box-shadow: var(--glow-s); }
+.page-hero { padding: 148px 40px 88px; text-align: center; position: relative; z-index: 1; overflow: hidden; }
+.hero-glow { position: absolute; top: -40px; left: 50%; transform: translateX(-50%); width: 640px; height: 420px; background: radial-gradient(ellipse, rgba(0,200,255,0.07) 0%, transparent 68%); pointer-events: none; }
+.page-label { font-size: 10px; letter-spacing: 5px; color: var(--blue); font-family: 'Rajdhani', sans-serif; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; display: inline-flex; align-items: center; gap: 12px; }
 .page-label::before { content: ''; width: 28px; height: 1px; background: var(--blue); }
 .page-label::after  { content: ''; width: 28px; height: 1px; background: var(--blue); }
-.page-title {
-  font-size: clamp(42px, 6vw, 74px); font-weight: 700;
-  letter-spacing: -1.5px; line-height: 0.97;
-  margin-bottom: 20px; text-transform: uppercase;
-}
+.page-title { font-size: clamp(42px, 6vw, 74px); font-weight: 700; letter-spacing: -1.5px; line-height: 0.97; margin-bottom: 20px; text-transform: uppercase; }
 .page-title em { font-style: normal; color: var(--blue); }
-.page-sub {
-  font-size: 17px; color: var(--muted); max-width: 500px;
-  line-height: 1.7; font-weight: 300; margin: 0 auto;
-}
-
-/* ── SECTIONS ────────────────────────────────────────────────── */
-.section {
-  padding: 88px 48px; max-width: 1120px; margin: 0 auto;
-  position: relative; z-index: 1;
-}
-.section-divider {
-  border: none; border-top: 1px solid rgba(0,200,255,0.06);
-  margin: 0;
-}
-.s-label {
-  font-size: 10px; letter-spacing: 5px; color: var(--blue);
-  font-family: 'Rajdhani', sans-serif; font-weight: 700;
-  margin-bottom: 14px; text-transform: uppercase;
-  display: flex; align-items: center; gap: 12px;
-}
+.page-sub { font-size: 17px; color: var(--muted); max-width: 500px; line-height: 1.7; font-weight: 300; margin: 0 auto; }
+.section { padding: 88px 48px; max-width: 1120px; margin: 0 auto; position: relative; z-index: 1; }
+.section-divider { border: none; border-top: 1px solid rgba(0,200,255,0.06); margin: 0; }
+.s-label { font-size: 10px; letter-spacing: 5px; color: var(--blue); font-family: 'Rajdhani', sans-serif; font-weight: 700; margin-bottom: 14px; text-transform: uppercase; display: flex; align-items: center; gap: 12px; }
 .s-label::before { content: ''; width: 24px; height: 1px; background: var(--blue); }
-.s-title {
-  font-size: clamp(30px, 4vw, 50px); font-weight: 700;
-  letter-spacing: -1px; line-height: 1.02; margin-bottom: 12px;
-  text-transform: uppercase;
-}
+.s-title { font-size: clamp(30px, 4vw, 50px); font-weight: 700; letter-spacing: -1px; line-height: 1.02; margin-bottom: 12px; text-transform: uppercase; }
 .s-title em { font-style: normal; color: var(--blue); }
-.s-sub {
-  font-size: 15px; color: var(--muted); max-width: 520px;
-  line-height: 1.75; font-weight: 300; margin-bottom: 48px;
-}
-
-/* ── BUTTONS ─────────────────────────────────────────────────── */
-.btn-p {
-  display: inline-flex; align-items: center; justify-content: center;
-  gap: 10px; text-decoration: none; text-transform: uppercase;
-  font-family: 'Rajdhani', sans-serif; font-size: 14px;
-  font-weight: 700; letter-spacing: 2.5px;
-  padding: 15px 38px; border-radius: var(--radius);
-  background: var(--blue); color: var(--black);
-  border: 1.5px solid var(--blue);
-  box-shadow: 0 0 28px rgba(0,200,255,0.28);
-  transition: all 0.22s; min-height: 50px;
-}
-.btn-p:hover {
-  background: transparent; color: var(--blue);
-  box-shadow: var(--glow-m); transform: translateY(-2px);
-}
-.btn-o {
-  display: inline-flex; align-items: center; justify-content: center;
-  gap: 8px; text-decoration: none; text-transform: uppercase;
-  font-family: 'Rajdhani', sans-serif; font-size: 13px;
-  font-weight: 600; letter-spacing: 2px;
-  padding: 14px 28px; border-radius: var(--radius);
-  background: transparent; color: var(--chrome);
-  border: 1px solid rgba(0,200,255,0.22);
-  transition: all 0.22s; min-height: 50px;
-}
+.s-sub { font-size: 15px; color: var(--muted); max-width: 520px; line-height: 1.75; font-weight: 300; margin-bottom: 48px; }
+.btn-p { display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; text-transform: uppercase; font-family: 'Rajdhani', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 2.5px; padding: 15px 38px; border-radius: var(--radius); background: var(--blue); color: var(--black); border: 1.5px solid var(--blue); box-shadow: 0 0 28px rgba(0,200,255,0.28); transition: all 0.22s; min-height: 50px; }
+.btn-p:hover { background: transparent; color: var(--blue); box-shadow: var(--glow-m); transform: translateY(-2px); }
+.btn-o { display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; text-transform: uppercase; font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: 2px; padding: 14px 28px; border-radius: var(--radius); background: transparent; color: var(--chrome); border: 1px solid rgba(0,200,255,0.22); transition: all 0.22s; min-height: 50px; }
 .btn-o:hover { border-color: var(--blue); color: var(--blue); }
-
-/* ── CARDS ───────────────────────────────────────────────────── */
-.card {
-  background: var(--gray2); border: 1px solid rgba(0,200,255,0.09);
-  border-radius: var(--radius-lg); padding: 30px;
-  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
-}
-.card:hover {
-  border-color: rgba(0,200,255,0.22);
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-}
-.card h3 {
-  font-size: 17px; font-weight: 700; letter-spacing: 0.5px;
-  margin-bottom: 10px; text-transform: uppercase; overflow-wrap: anywhere;
-}
-.card p {
-  font-size: 14px; color: var(--muted); line-height: 1.7; font-weight: 300;
-}
-
-/* ── GRID LAYOUTS ────────────────────────────────────────────── */
+.card { background: var(--gray2); border: 1px solid rgba(0,200,255,0.09); border-radius: var(--radius-lg); padding: 30px; transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s; }
+.card:hover { border-color: rgba(0,200,255,0.22); transform: translateY(-4px); box-shadow: 0 8px 32px rgba(0,0,0,0.4); }
+.card h3 { font-size: 17px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 10px; text-transform: uppercase; overflow-wrap: anywhere; }
+.card p { font-size: 14px; color: var(--muted); line-height: 1.7; font-weight: 300; }
 .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-
-/* ── STEP ROWS ───────────────────────────────────────────────── */
-.step-row {
-  display: grid; grid-template-columns: 72px 1fr;
-  background: var(--gray2); border: 1px solid rgba(0,200,255,0.09);
-  border-radius: var(--radius-lg); overflow: hidden;
-  margin-bottom: 3px; transition: border-color 0.25s;
-}
+.step-row { display: grid; grid-template-columns: 72px 1fr; background: var(--gray2); border: 1px solid rgba(0,200,255,0.09); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 3px; transition: border-color 0.25s; }
 .step-row:hover { border-color: rgba(0,200,255,0.25); }
-.step-num-col {
-  background: rgba(0,200,255,0.04);
-  border-right: 1px solid rgba(0,200,255,0.09);
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Rajdhani', sans-serif; font-size: 30px;
-  font-weight: 700; color: rgba(0,200,255,0.2);
-}
+.step-num-col { background: rgba(0,200,255,0.04); border-right: 1px solid rgba(0,200,255,0.09); display: flex; align-items: center; justify-content: center; font-family: 'Rajdhani', sans-serif; font-size: 30px; font-weight: 700; color: rgba(0,200,255,0.2); }
 .step-content { padding: 26px 30px; }
-.step-content h3 {
-  font-size: 17px; font-weight: 700; letter-spacing: 0.5px;
-  margin-bottom: 8px; text-transform: uppercase;
-}
-.step-content p {
-  font-size: 14px; color: var(--muted); line-height: 1.7; font-weight: 300;
-}
-
-/* ── PRICE CARDS ─────────────────────────────────────────────── */
-.price-card {
-  background: var(--gray2); border: 1px solid rgba(0,200,255,0.09);
-  border-radius: var(--radius-lg); padding: 34px 26px;
-  position: relative; transition: all 0.3s;
-  display: flex; flex-direction: column;
-}
+.step-content h3 { font-size: 17px; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 8px; text-transform: uppercase; }
+.step-content p { font-size: 14px; color: var(--muted); line-height: 1.7; font-weight: 300; }
+.price-card { background: var(--gray2); border: 1px solid rgba(0,200,255,0.09); border-radius: var(--radius-lg); padding: 34px 26px; position: relative; transition: all 0.3s; display: flex; flex-direction: column; }
 .price-card:hover { border-color: rgba(0,200,255,0.25); transform: translateY(-4px); }
-.price-card.feat {
-  background: linear-gradient(160deg, #060f1a 0%, #030810 100%);
-  border-color: rgba(0,200,255,0.28);
-  box-shadow: 0 0 48px rgba(0,200,255,0.07);
-}
-.price-badge {
-  position: absolute; top: -11px; left: 50%; transform: translateX(-50%);
-  background: var(--blue); color: var(--black);
-  font-family: 'Rajdhani', sans-serif; font-size: 10px;
-  font-weight: 700; letter-spacing: 2px; padding: 4px 14px;
-  border-radius: 3px; text-transform: uppercase; white-space: nowrap;
-}
-.price-tier {
-  font-family: 'Rajdhani', sans-serif; font-size: 13px;
-  font-weight: 700; letter-spacing: 3px; color: var(--muted);
-  margin-bottom: 14px; text-transform: uppercase;
-}
-.price-amt {
-  font-family: 'Rajdhani', sans-serif; font-size: 54px;
-  font-weight: 700; line-height: 1; margin-bottom: 4px;
-}
-.price-amt.free-color {
-  color: var(--blue); text-shadow: 0 0 30px rgba(0,200,255,0.35);
-}
-.price-amt sup {
-  font-size: 22px; vertical-align: top; margin-top: 9px;
-  display: inline-block; letter-spacing: 0;
-}
-.price-cents {
-  font-size: 32px; font-weight: 600; letter-spacing: 0;
-}
+.price-card.feat { background: linear-gradient(160deg, #060f1a 0%, #030810 100%); border-color: rgba(0,200,255,0.28); box-shadow: 0 0 48px rgba(0,200,255,0.07); }
+.price-badge { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); background: var(--blue); color: var(--black); font-family: 'Rajdhani', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: 2px; padding: 4px 14px; border-radius: 3px; text-transform: uppercase; white-space: nowrap; }
+.price-tier { font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 3px; color: var(--muted); margin-bottom: 14px; text-transform: uppercase; }
+.price-amt { font-family: 'Rajdhani', sans-serif; font-size: 54px; font-weight: 700; line-height: 1; margin-bottom: 4px; }
+.price-amt.free-color { color: var(--blue); text-shadow: 0 0 30px rgba(0,200,255,0.35); }
+.price-amt sup { font-size: 22px; vertical-align: top; margin-top: 9px; display: inline-block; letter-spacing: 0; }
+.price-cents { font-size: 32px; font-weight: 600; letter-spacing: 0; }
 .price-period { font-size: 12px; color: #2d4055; margin-bottom: 6px; }
 .price-credit { font-size: 12px; color: var(--blue); margin-bottom: 22px; font-style: italic; }
-.price-feats {
-  list-style: none; display: flex; flex-direction: column;
-  gap: 10px; margin-bottom: 28px; flex: 1;
-}
-.price-feats li {
-  display: flex; align-items: flex-start; gap: 10px;
-  font-size: 13px; color: var(--muted); font-weight: 300;
-}
+.price-feats { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; flex: 1; }
+.price-feats li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--muted); font-weight: 300; }
 .ck { color: var(--blue); font-weight: 700; font-size: 11px; margin-top: 3px; flex-shrink: 0; }
-.price-btn-s, .price-btn-g {
-  width: 100%; padding: 13px; border-radius: var(--radius);
-  font-family: 'Rajdhani', sans-serif; font-size: 13px;
-  font-weight: 700; text-align: center; text-decoration: none;
-  display: flex; align-items: center; justify-content: center;
-  letter-spacing: 1.8px; text-transform: uppercase;
-  transition: all 0.22s; min-height: 46px; margin-top: auto;
-}
-.price-btn-s {
-  background: var(--blue); color: var(--black);
-  border: 1.5px solid var(--blue);
-}
+.price-btn-s, .price-btn-g { width: 100%; padding: 13px; border-radius: var(--radius); font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 700; text-align: center; text-decoration: none; display: flex; align-items: center; justify-content: center; letter-spacing: 1.8px; text-transform: uppercase; transition: all 0.22s; min-height: 46px; margin-top: auto; }
+.price-btn-s { background: var(--blue); color: var(--black); border: 1.5px solid var(--blue); }
 .price-btn-s:hover { background: transparent; color: var(--blue); }
-.price-btn-g {
-  background: transparent; color: var(--chrome);
-  border: 1px solid rgba(0,200,255,0.2);
-}
+.price-btn-g { background: transparent; color: var(--chrome); border: 1px solid rgba(0,200,255,0.2); }
 .price-btn-g:hover { border-color: var(--blue); color: var(--blue); }
-
-/* ── FAQ ─────────────────────────────────────────────────────── */
-.faq-item {
-  background: var(--gray2); border: 1px solid rgba(0,200,255,0.08);
-  border-radius: var(--radius); overflow: hidden;
-  cursor: pointer; transition: border-color 0.2s; margin-bottom: 3px;
-}
+.faq-item { background: var(--gray2); border: 1px solid rgba(0,200,255,0.08); border-radius: var(--radius); overflow: hidden; cursor: pointer; transition: border-color 0.2s; margin-bottom: 3px; }
 .faq-item:hover { border-color: rgba(0,200,255,0.2); }
 .faq-item.open  { border-color: rgba(0,200,255,0.28); }
-.faq-q {
-  padding: 20px 24px; display: flex; justify-content: space-between;
-  align-items: center; gap: 16px;
-  font-family: 'Rajdhani', sans-serif; font-size: 17px;
-  font-weight: 600; letter-spacing: 0.3px;
-  transition: color 0.2s; user-select: none; line-height: 1.2;
-}
+.faq-q { padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-family: 'Rajdhani', sans-serif; font-size: 17px; font-weight: 600; letter-spacing: 0.3px; transition: color 0.2s; user-select: none; line-height: 1.2; }
 .faq-item.open .faq-q { color: var(--blue); }
-.faq-icon {
-  color: var(--blue); font-size: 22px; transition: transform 0.3s;
-  flex-shrink: 0; width: 28px; height: 28px;
-  display: inline-flex; align-items: center; justify-content: center;
-}
+.faq-icon { color: var(--blue); font-size: 22px; transition: transform 0.3s; flex-shrink: 0; width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; }
 .faq-item.open .faq-icon { transform: rotate(45deg); }
-.faq-a {
-  max-height: 0; overflow: hidden; padding: 0 24px;
-  transition: max-height 0.4s ease, padding 0.3s;
-  font-size: 14px; color: var(--muted); line-height: 1.75; font-weight: 300;
-}
+.faq-a { max-height: 0; overflow: hidden; padding: 0 24px; transition: max-height 0.4s ease, padding 0.3s; font-size: 14px; color: var(--muted); line-height: 1.75; font-weight: 300; }
 .faq-item.open .faq-a { max-height: 400px; padding: 0 24px 20px; }
-
-/* ── BOTTOM CTA ──────────────────────────────────────────────── */
-.bottom-cta {
-  padding: 110px 40px; text-align: center;
-  position: relative; overflow: hidden; z-index: 1;
-}
-.cta-glow {
-  position: absolute; bottom: -120px; left: 50%; transform: translateX(-50%);
-  width: 900px; height: 500px;
-  background: radial-gradient(ellipse, rgba(0,200,255,0.06) 0%, transparent 70%);
-  pointer-events: none;
-}
-.bottom-cta h2 {
-  font-size: clamp(34px, 5vw, 70px); font-weight: 700;
-  letter-spacing: -1.5px; line-height: 0.98;
-  margin-bottom: 18px; text-transform: uppercase;
-  overflow-wrap: anywhere;
-}
+.bottom-cta { padding: 110px 40px; text-align: center; position: relative; overflow: hidden; z-index: 1; }
+.cta-glow { position: absolute; bottom: -120px; left: 50%; transform: translateX(-50%); width: 900px; height: 500px; background: radial-gradient(ellipse, rgba(0,200,255,0.06) 0%, transparent 70%); pointer-events: none; }
+.bottom-cta h2 { font-size: clamp(34px, 5vw, 70px); font-weight: 700; letter-spacing: -1.5px; line-height: 0.98; margin-bottom: 18px; text-transform: uppercase; overflow-wrap: anywhere; }
 .bottom-cta h2 span { color: var(--blue); display: block; }
-.bottom-cta p {
-  font-size: 16px; color: var(--muted); margin-bottom: 40px; font-weight: 300;
-}
-
-/* ── FOOTER ──────────────────────────────────────────────────── */
-footer {
-  padding: 36px 52px;
-  border-top: 1px solid rgba(0,200,255,0.08);
-  display: flex; align-items: center; justify-content: center;
-  flex-wrap: wrap; gap: 20px 40px;
-  position: relative; z-index: 1;
-  background: rgba(3,5,7,0.9);
-  text-align: center;
-}
-.f-logo {
-  font-family: 'Rajdhani', sans-serif; font-size: 16px; font-weight: 700;
-  color: var(--white); text-decoration: none;
-  display: flex; align-items: center; gap: 10px;
-  letter-spacing: 1px; text-transform: uppercase;
-  white-space: nowrap;
-}
+.bottom-cta p { font-size: 16px; color: var(--muted); margin-bottom: 40px; font-weight: 300; }
+footer { padding: 36px 52px; border-top: 1px solid rgba(0,200,255,0.08); display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 20px 40px; position: relative; z-index: 1; background: rgba(3,5,7,0.9); text-align: center; }
+.f-logo { font-family: 'Rajdhani', sans-serif; font-size: 16px; font-weight: 700; color: var(--white); text-decoration: none; display: flex; align-items: center; gap: 10px; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; }
 .f-logo-text { display: flex; align-items: center; gap: 0; letter-spacing: 2px; }
-.f-links {
-  display: flex; gap: 24px; list-style: none; flex-wrap: wrap;
-  align-items: center;
-}
-.f-links a {
-  color: var(--muted); text-decoration: none;
-  font-size: 13px; transition: color 0.2s;
-}
+.f-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; align-items: center; }
+.f-links a { color: var(--muted); text-decoration: none; font-size: 13px; transition: color 0.2s; }
 .f-links a:hover { color: var(--white); }
-.f-copy {
-  font-size: 11px; color: #1e2d3a; letter-spacing: 0.5px;
-}
-
-/* ── REVEAL ANIMATION ────────────────────────────────────────── */
+.f-copy { font-size: 11px; color: #1e2d3a; letter-spacing: 0.5px; }
 .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.65s ease, transform 0.65s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
-
-/* ── FOR FEAT LIST ───────────────────────────────────────────── */
 .for-feat { list-style: none; }
-.for-feat li {
-  display: flex; align-items: center; gap: 12px;
-  font-size: 14px; color: #7a9ab0; margin-bottom: 10px;
-}
-.for-feat li::before {
-  content: '›'; color: var(--blue); font-size: 18px;
-  font-weight: 700; font-family: 'Rajdhani', sans-serif;
-}
-
-/* ══════════════════════════════════════════════════════════════
-   RESPONSIVE
-══════════════════════════════════════════════════════════════ */
-@media (max-width: 1020px) {
-  nav { padding: 0 28px; }
-  .nav-links { gap: 20px; }
-  .nav-links a { font-size: 12.5px; }
-  .section { padding: 72px 32px; }
-  .grid-3 { grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 768px) {
-  /* Nav collapses: logo centered, buttons as 2-col grid below */
-  nav {
-    position: fixed;
-    height: 56px;
-    padding: 0 16px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0;
-  }
-  .logo { width: auto; justify-content: flex-start; }
-  .logo-text { font-size: 17px; letter-spacing: 1.8px; }
-  .logo-img { width: 32px; height: 32px; }
-  .nav-links { display: none; }
-  .nav-actions {
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
-    width: auto;
-  }
-  .nav-login, .nav-cta {
-    width: auto; min-height: 34px;
-    padding: 7px 13px;
-    font-size: 11px; letter-spacing: 1.2px;
-    border-radius: 6px;
-    display: flex; align-items: center; justify-content: center;
-    white-space: nowrap;
-  }
-  .page-hero { padding: 84px 20px 56px; }
-  .page-label { letter-spacing: 3.5px; }
-  .page-title { font-size: clamp(36px,11vw,56px); letter-spacing: -1px; }
-  .page-sub { font-size: 15.5px; max-width: 92%; }
-  .section { padding: 56px 20px; }
-  .s-title { font-size: clamp(28px,8vw,42px); }
-  .grid-3, .grid-2 { grid-template-columns: 1fr; gap: 12px; }
-  .card { padding: 24px 20px; border-radius: var(--radius-lg); }
-  .card:hover { transform: none; }
-  .price-card:hover { transform: none; }
-  .bottom-cta { padding: 72px 20px; }
-  footer {
-    padding: 28px 20px;
-    flex-direction: column; align-items: center; gap: 16px; text-align: center;
-  }
-  .f-logo { justify-content: center; width: 100%; }
-  .f-links {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-  }
-  .f-links a {
-    display: block;
-    padding: 8px 0;
-    border: none;
-    border-bottom: 1px solid rgba(0,200,255,0.05);
-    background: transparent;
-    font-size: 14px;
-    color: var(--muted);
-    width: 100%;
-    text-align: center;
-  }
-  .f-links a:last-child { border-bottom: none; }
-  .f-copy { text-align: center; width: 100%; }
-  .f-copy { width: 100%; text-align: center; }
-  .page-hero > .hero-btns {
-    display: grid !important;
-    grid-template-columns: 1fr !important;
-    width: 100% !important;
-    max-width: 360px !important;
-    margin: 32px auto 0 !important;
-    gap: 12px !important;
-  }
-  .page-hero .btn-p,
-  .page-hero .btn-o {
-    width: 100%; min-height: 52px;
-    padding: 14px 18px; border-radius: 8px; letter-spacing: 1.8px;
-  }
-  .bottom-cta .btn-p {
-    width: 100%; max-width: 340px;
-    padding: 16px 20px; font-size: 14px; letter-spacing: 2px;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-actions { grid-template-columns: 1fr; }
-  .f-links { grid-template-columns: 1fr; }
-}
-
+.for-feat li { display: flex; align-items: center; gap: 12px; font-size: 14px; color: #7a9ab0; margin-bottom: 10px; }
+.for-feat li::before { content: '›'; color: var(--blue); font-size: 18px; font-weight: 700; font-family: 'Rajdhani', sans-serif; }
 
 /* ── INDEX EXCLUSIVE ── */
 .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:140px 40px 80px;position:relative;text-align:center;overflow:hidden;z-index:1;}
@@ -634,8 +247,140 @@ footer {
 .mockup-tag{display:inline-flex;align-items:center;padding:3px 10px;border-radius:20px;font-family:'Rajdhani',sans-serif;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;background:rgba(0,200,255,0.1);color:var(--blue);border:1px solid rgba(0,200,255,0.2);}
 .mockup-tag.pending{background:rgba(255,160,0,0.1);color:#ffa000;border-color:rgba(255,160,0,0.2);}
 .mockup-stat{background:var(--black);border:1px solid rgba(0,200,255,0.08);border-radius:8px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
-/* INDEX RESPONSIVE */
-@media(max-width:900px){
+
+/* ── WAITLIST SECTION ── */
+.waitlist-section {
+  padding: 100px 40px;
+  background: linear-gradient(to bottom, var(--black), var(--black2));
+  border-top: 1px solid rgba(0,200,255,0.06);
+  border-bottom: 1px solid rgba(0,200,255,0.06);
+  position: relative; z-index: 1; overflow: hidden;
+}
+.waitlist-section::before {
+  content: '';
+  position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 600px;
+  background: radial-gradient(ellipse, rgba(0,200,255,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+.waitlist-inner {
+  max-width: 680px; margin: 0 auto; text-align: center; position: relative;
+}
+.waitlist-launch-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: rgba(0,200,255,0.06);
+  border: 1px solid rgba(0,200,255,0.2);
+  border-radius: 40px; padding: 8px 20px;
+  font-size: 11px; letter-spacing: 2.5px; color: var(--blue);
+  font-family: 'Rajdhani', sans-serif; font-weight: 700;
+  text-transform: uppercase; margin-bottom: 28px;
+}
+.wl-badge-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--blue); box-shadow: 0 0 8px var(--blue);
+  animation: blink 2s ease-in-out infinite;
+}
+.waitlist-section h2 {
+  font-size: clamp(38px, 5vw, 68px);
+  font-weight: 700; letter-spacing: -2px; line-height: 0.95;
+  text-transform: uppercase; margin-bottom: 16px;
+}
+.waitlist-section h2 em { font-style: normal; color: var(--blue); }
+.waitlist-section .wl-sub {
+  font-size: 16px; color: var(--muted); line-height: 1.75;
+  font-weight: 300; margin-bottom: 48px; max-width: 480px; margin-left: auto; margin-right: auto;
+}
+
+/* Countdown */
+.wl-countdown {
+  display: flex; gap: 4px; justify-content: center; margin-bottom: 44px;
+}
+.wl-cd-block {
+  display: flex; flex-direction: column; align-items: center;
+  background: var(--gray2); border: 1px solid rgba(0,200,255,0.12);
+  border-radius: var(--radius-lg); padding: 18px 24px; min-width: 82px;
+}
+.wl-cd-num {
+  font-family: 'Rajdhani', sans-serif; font-size: 40px; font-weight: 700;
+  line-height: 1; color: var(--blue);
+  text-shadow: 0 0 24px rgba(0,200,255,0.4); letter-spacing: -1px;
+}
+.wl-cd-label {
+  font-size: 9px; letter-spacing: 3px; color: var(--muted);
+  font-family: 'Rajdhani', sans-serif; font-weight: 700;
+  text-transform: uppercase; margin-top: 6px;
+}
+.wl-cd-sep {
+  font-family: 'Rajdhani', sans-serif; font-size: 32px; font-weight: 700;
+  color: rgba(0,200,255,0.25); display: flex; align-items: center;
+  padding-bottom: 18px;
+}
+
+/* Inline form */
+.wl-form-wrap { max-width: 500px; margin: 0 auto; }
+.wl-form {
+  display: flex; gap: 0;
+  background: var(--gray2);
+  border: 1px solid rgba(0,200,255,0.18);
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: 0 0 40px rgba(0,200,255,0.06);
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.wl-form:focus-within {
+  border-color: rgba(0,200,255,0.4);
+  box-shadow: 0 0 32px rgba(0,200,255,0.12);
+}
+.wl-input {
+  flex: 1; min-width: 0; background: transparent;
+  border: none; outline: none; padding: 16px 20px;
+  font-family: 'DM Sans', sans-serif; font-size: 15px;
+  color: var(--white); font-weight: 300;
+}
+.wl-input::placeholder { color: var(--muted); }
+.wl-btn {
+  background: var(--blue); color: var(--black);
+  border: none; cursor: pointer; font-family: 'Rajdhani', sans-serif;
+  font-size: 13px; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; padding: 16px 24px;
+  transition: all 0.22s; white-space: nowrap; flex-shrink: 0;
+}
+.wl-btn:hover { background: var(--white); }
+.wl-success {
+  display: none; flex-direction: column; align-items: center; gap: 10px;
+  padding: 24px 32px;
+  background: var(--gray2); border: 1px solid rgba(0,200,255,0.25);
+  border-radius: var(--radius-lg); box-shadow: 0 0 40px rgba(0,200,255,0.08);
+}
+.wl-success.show { display: flex; }
+.wl-success-icon {
+  width: 48px; height: 48px; border-radius: 50%;
+  background: rgba(0,200,255,0.08); border: 1.5px solid rgba(0,200,255,0.3);
+  display: flex; align-items: center; justify-content: center; color: var(--blue);
+}
+.wl-success h3 { font-size: 20px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.wl-success p { font-size: 14px; color: var(--muted); font-weight: 300; text-align: center; }
+.wl-note { margin-top: 14px; font-size: 12px; color: #1a2a38; letter-spacing: 0.8px; }
+
+/* Perks row */
+.wl-perks {
+  display: flex; justify-content: center; gap: 32px;
+  flex-wrap: wrap; margin-top: 48px;
+}
+.wl-perk {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: var(--muted); font-weight: 300;
+}
+.wl-perk-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
+
+/* RESPONSIVE */
+@media (max-width: 1020px) {
+  nav { padding: 0 28px; }
+  .nav-links { gap: 20px; }
+  .nav-links a { font-size: 12.5px; }
+  .section { padding: 72px 32px; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 900px) {
   .steps{grid-template-columns:1fr;}
   .pricing-grid,.testi-grid{grid-template-columns:1fr;max-width:500px;margin-left:auto;margin-right:auto;}
   .for-grid{grid-template-columns:1fr;}
@@ -643,7 +388,28 @@ footer {
   .stat-item{border-right:none;border-bottom:1px solid rgba(0,200,255,0.08);}
   .stat-item:last-child{border-bottom:none;}
 }
-@media(max-width:768px){
+@media (max-width: 768px) {
+  nav { position: fixed; height: 56px; padding: 0 16px; flex-direction: row; align-items: center; justify-content: space-between; gap: 0; }
+  .logo { width: auto; justify-content: flex-start; }
+  .logo-text { font-size: 17px; letter-spacing: 1.8px; }
+  .logo-img { width: 32px; height: 32px; }
+  .nav-links { display: none; }
+  .nav-actions { display: flex; flex-direction: row; gap: 8px; width: auto; }
+  .nav-login, .nav-cta { width: auto; min-height: 34px; padding: 7px 13px; font-size: 11px; letter-spacing: 1.2px; border-radius: 6px; display: flex; align-items: center; justify-content: center; white-space: nowrap; }
+  .page-hero { padding: 84px 20px 56px; }
+  .section { padding: 56px 20px; }
+  .s-title { font-size: clamp(28px,8vw,42px); }
+  .grid-3, .grid-2 { grid-template-columns: 1fr; gap: 12px; }
+  .card { padding: 24px 20px; }
+  .card:hover { transform: none; }
+  .price-card:hover { transform: none; }
+  .bottom-cta { padding: 72px 20px; }
+  footer { padding: 28px 20px; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+  .f-logo { justify-content: center; width: 100%; }
+  .f-links { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 0; }
+  .f-links a { display: block; padding: 8px 0; border-bottom: 1px solid rgba(0,200,255,0.05); font-size: 14px; color: var(--muted); width: 100%; text-align: center; }
+  .f-links a:last-child { border-bottom: none; }
+  .f-copy { text-align: center; width: 100%; }
   .hero{padding:60px 20px 56px;min-height:auto;}
   .hero h1{font-size:clamp(42px,13vw,64px);letter-spacing:-2px;}
   .hero-sub{font-size:16px;}
@@ -654,10 +420,21 @@ footer {
   .for-section{padding:60px 20px;}
   .mockup-content{grid-template-columns:1fr;padding:16px;}
   .testi-section{padding:60px 20px;}
-  .bottom-cta{padding:72px 20px;}
   .bottom-cta .btn-primary{width:100%;max-width:340px;}
+  .waitlist-section { padding: 72px 20px; }
+  .wl-countdown { gap: 3px; }
+  .wl-cd-block { padding: 14px 16px; min-width: 68px; }
+  .wl-cd-num { font-size: 32px; }
+  .wl-cd-sep { font-size: 24px; padding-bottom: 14px; }
+  .wl-form { flex-direction: column; }
+  .wl-input { padding: 16px 18px; }
+  .wl-btn { padding: 16px; width: 100%; font-size: 14px; }
+  .wl-perks { gap: 16px; flex-direction: column; align-items: center; }
 }
-
+@media (max-width: 480px) {
+  .nav-actions { grid-template-columns: 1fr; }
+  .f-links { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
@@ -673,37 +450,28 @@ footer {
   </div>
 </nav>
 
-
 <!-- HERO -->
 <section class="hero">
   <div class="hero-orb"></div>
   <div class="hero-orb2"></div>
-
   <div class="hero-badge">
     <div class="badge-dot"></div>
     Are You Ready To Record?
   </div>
-
   <div class="hero-logo-big">
     <img src="https://i.imgur.com/so3dDyB.png" alt="Studio View" />
   </div>
-
   <h1>
     <span class="studio">Studio</span>
     <span class="view">View</span>
   </h1>
-
   <p class="hero-motto">Record with <span>Purpose.</span></p>
-
   <p class="hero-sub">The free booking and session management app built for music artists and recording studios. Find studios. Book sessions. Get paid.</p>
-
   <div class="hero-actions">
-    <a href="waitlist.html" class="btn-primary">Get Started Free →</a>
+    <a href="waitlist.html" class="btn-primary">Join the Waitlist →</a>
     <a href="how-it-works.html" class="btn-outline">See How It Works</a>
   </div>
-
-  <p class="hero-free">Free to sign up. <span>No credit card required.</span></p>
-
+  <p class="hero-note">Launching July 4th · Free to sign up · No credit card required</p>
   <div class="hero-mockup" style="position:relative;z-index:1;margin-top:80px;width:100%;max-width:960px;">
     <div class="mockup-bar">
       <div class="mockup-dot" style="background:#ff5f57"></div>
@@ -816,11 +584,11 @@ footer {
         <h3>Recording Studios</h3>
         <p>Stop losing bookings to DMs and spreadsheets. Studio View puts your studio in front of artists actively looking to record right now, for free.</p>
         <ul class="for-features">
-          <li>Free listing, no monthly fee to get started</li>
-          <li>Manage bookings and availability in one place</li>
-          <li>Automated payments, get paid per session</li>
-          <li>Premium membership for featured placement</li>
-          <li>Build your artist client base organically</li>
+          <li><span class="check">✓</span> Free listing, no monthly fee to get started</li>
+          <li><span class="check">✓</span> Manage bookings and availability in one place</li>
+          <li><span class="check">✓</span> Automated payments, get paid per session</li>
+          <li><span class="check">✓</span> Premium membership for featured placement</li>
+          <li><span class="check">✓</span> Build your artist client base organically</li>
         </ul>
       </div>
       <div class="for-card" style="border-left:1px solid rgba(0,200,255,0.08);">
@@ -829,11 +597,11 @@ footer {
         <h3>Music Artists</h3>
         <p>Find the right studio for your sound in any city. Book sessions in minutes not days. Focus on the music, we handle everything else.</p>
         <ul class="for-features">
-          <li>Search studios by city, vibe, and price</li>
-          <li>Book and pay securely through the app</li>
-          <li>Session history and receipts in one place</li>
-          <li>Memberships include free studio time</li>
-          <li>Free to sign up and use forever</li>
+          <li><span class="check">✓</span> Search studios by city, vibe, and price</li>
+          <li><span class="check">✓</span> Book and pay securely through the app</li>
+          <li><span class="check">✓</span> Session history and receipts in one place</li>
+          <li><span class="check">✓</span> Memberships include free studio time</li>
+          <li><span class="check">✓</span> Free to sign up and use forever</li>
         </ul>
       </div>
     </div>
@@ -908,53 +676,121 @@ footer {
     <h2 class="section-title reveal">Built for the culture.<br/><em>Trusted by the culture.</em></h2>
     <div class="testi-grid reveal">
       <div class="testi-card">
-        <div class="testi-stars"><span style="color:var(--blue);display:inline-flex;align-items:center;filter:drop-shadow(0 0 4px rgba(0,200,255,0.4));"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></div>
+        <div class="testi-stars"><span style="color:var(--blue);display:inline-flex;align-items:center;filter:drop-shadow(0 0 4px rgba(0,200,255,0.4));"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></div>
         <p class="testi-text">"Finally an app that gets how independent studios operate. We booked 8 new clients in the first two weeks just from being on the platform."</p>
         <div class="testi-author">
-          <div class="testi-avatar"><span style="color:var(--blue);display:inline-flex;align-items:center;filter:drop-shadow(0 0 4px rgba(0,200,255,0.4));"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg></span></div>
-          <div>
-            <div class="testi-name">Marcus T.</div>
-            <div class="testi-role">Studio Owner · Newark, NJ</div>
-          </div>
+          <div class="testi-avatar"><span style="color:var(--blue);display:inline-flex;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 10a7 7 0 0 0 14 0"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></svg></span></div>
+          <div><div class="testi-name">Marcus T.</div><div class="testi-role">Studio Owner · Newark, NJ</div></div>
         </div>
       </div>
       <div class="testi-card">
-        <div class="testi-stars"><span style="color:var(--blue);display:inline-flex;align-items:center;filter:drop-shadow(0 0 4px rgba(0,200,255,0.4));"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></div>
+        <div class="testi-stars"><span style="color:var(--blue);display:inline-flex;align-items:center;filter:drop-shadow(0 0 4px rgba(0,200,255,0.4));"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></div>
         <p class="testi-text">"I was spending so much time on DMs trying to find studio time when I travel. Studio View makes it stupid easy. Booked a session in Houston in 5 minutes."</p>
         <div class="testi-author">
-          <div class="testi-avatar"><span style="color:var(--blue);display:inline-flex;align-items:center;filter:drop-shadow(0 0 4px rgba(0,200,255,0.4));"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span></div>
-          <div>
-            <div class="testi-name">Ky Renee</div>
-            <div class="testi-role">Independent Artist · Philadelphia, PA</div>
-          </div>
+          <div class="testi-avatar"><span style="color:var(--blue);display:inline-flex;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></span></div>
+          <div><div class="testi-name">Ky Renee</div><div class="testi-role">Independent Artist · Philadelphia, PA</div></div>
         </div>
       </div>
       <div class="testi-card">
-        <div class="testi-stars"><span style="color:var(--blue);display:inline-flex;align-items:center;filter:drop-shadow(0 0 4px rgba(0,200,255,0.4));"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></div>
+        <div class="testi-stars"><span style="color:var(--blue);display:inline-flex;align-items:center;filter:drop-shadow(0 0 4px rgba(0,200,255,0.4));"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></div>
         <p class="testi-text">"The session fee model is perfect for us. No upfront cost to list, we only pay when we get paid. That's how it should work for independent studios."</p>
         <div class="testi-author">
-          <div class="testi-avatar"><span style="color:var(--blue);display:inline-flex;align-items:center;filter:drop-shadow(0 0 4px rgba(0,200,255,0.4));"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></span></div>
-          <div>
-            <div class="testi-name">Dre Williams</div>
-            <div class="testi-role">Engineer / Studio Owner · Los Angeles, CA</div>
-          </div>
+          <div class="testi-avatar"><span style="color:var(--blue);display:inline-flex;"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg></span></div>
+          <div><div class="testi-name">Dre Williams</div><div class="testi-role">Engineer / Studio Owner · Los Angeles, CA</div></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<!-- ═══════════════════════════════════════════════════════════
+     WAITLIST SECTION
+     ═══════════════════════════════════════════════════════════ -->
+<section class="waitlist-section" id="waitlist">
+  <div class="waitlist-inner">
+
+    <div class="waitlist-launch-tag reveal">
+      <div class="wl-badge-dot"></div>
+      Launching July 4th, 2026
+    </div>
+
+    <h2 class="reveal">
+      Be First<br/>
+      <em>In the Door.</em>
+    </h2>
+
+    <p class="wl-sub reveal">
+      Studio View drops July 4th. Join the waitlist now for early access, a founding member badge, and first access before we open to the public.
+    </p>
+
+    <!-- Countdown -->
+    <div class="wl-countdown reveal">
+      <div class="wl-cd-block">
+        <div class="wl-cd-num" id="cd-days">--</div>
+        <div class="wl-cd-label">Days</div>
+      </div>
+      <div class="wl-cd-sep">:</div>
+      <div class="wl-cd-block">
+        <div class="wl-cd-num" id="cd-hours">--</div>
+        <div class="wl-cd-label">Hours</div>
+      </div>
+      <div class="wl-cd-sep">:</div>
+      <div class="wl-cd-block">
+        <div class="wl-cd-num" id="cd-mins">--</div>
+        <div class="wl-cd-label">Mins</div>
+      </div>
+      <div class="wl-cd-sep">:</div>
+      <div class="wl-cd-block">
+        <div class="wl-cd-num" id="cd-secs">--</div>
+        <div class="wl-cd-label">Secs</div>
+      </div>
+    </div>
+
+    <!-- Inline email form — posts to Supabase -->
+    <div class="wl-form-wrap reveal" id="wl-form-area">
+      <div class="wl-form" id="wl-form">
+        <input
+          type="email"
+          class="wl-input"
+          id="wl-email"
+          placeholder="Enter your email to join the waitlist"
+          autocomplete="email"
+        />
+        <button class="wl-btn" id="wl-submit" onclick="handleWaitlist()">
+          Notify Me →
+        </button>
+      </div>
+      <div class="wl-success" id="wl-success">
+        <div class="wl-success-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3>You're on the list.</h3>
+        <p>We'll hit you when Studio View goes live.<br/>Check your inbox for a confirmation.</p>
+      </div>
+      <p class="wl-note">No spam. Just your launch notification.</p>
+    </div>
+
+    <!-- Perks row -->
+    <div class="wl-perks reveal">
+      <div class="wl-perk"><div class="wl-perk-dot"></div>Early access</div>
+      <div class="wl-perk"><div class="wl-perk-dot"></div>Founding member badge</div>
+      <div class="wl-perk"><div class="wl-perk-dot"></div>Free forever</div>
+      <div class="wl-perk"><div class="wl-perk-dot"></div>No credit card</div>
+    </div>
+
+  </div>
+</section>
+
 <!-- BOTTOM CTA -->
 <section class="bottom-cta">
   <div class="cta-orb"></div>
   <h2>Ready to Record<br/><span>with Purpose?</span></h2>
   <p>Join hundreds of studios and artists already on Studio View.<br/>Free to sign up. Always.</p>
-  <a href="waitlist.html" class="btn-primary" style="font-size:15px;padding:18px 52px;letter-spacing:3px;">Get Started Free →</a>
+  <a href="waitlist.html" class="btn-primary" style="font-size:15px;padding:18px 52px;letter-spacing:3px;">Join the Waitlist →</a>
   <p style="margin-top:20px;font-size:12px;color:#222c35;letter-spacing:1px;">No credit card. No commitment. Just music.</p>
 </section>
 
 <!-- FOOTER -->
-
 <footer>
   <a href="index.html" class="f-logo">
     <div class="logo-img" style="width:34px;height:34px;"><img src="https://i.imgur.com/so3dDyB.png" alt="SV"/></div>
@@ -970,12 +806,88 @@ footer {
   </ul>
   <div class="f-copy">Studio View App 2026 | Powered By Cutty TV</div>
 </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-document.querySelectorAll('.reveal').forEach(el=>{
-  new IntersectionObserver(([e])=>{if(e.isIntersecting)el.classList.add('visible');},{threshold:0.1}).observe(el);
+// ── Supabase config ──────────────────────────────────────────
+const SUPABASE_URL  = 'https://bejybnvhhbonfoigzvjo.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJlanlibnZoaGJvbmZvaWd6dmpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA1MDg2ODYsImV4cCI6MjA5NjA4NDY4Nn0.4nD5N3nOcgwEJmayj9xDLfFifAKIL_AO_z3eii_Y0IY'; // swap in your real anon key
+const { createClient } = supabase;
+const sb = createClient(SUPABASE_URL, SUPABASE_ANON);
+
+// ── Countdown ────────────────────────────────────────────────
+function updateCountdown() {
+  const target = new Date('2026-07-04T00:00:00');
+  const diff   = target - new Date();
+  if (diff <= 0) {
+    ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => {
+      document.getElementById(id).textContent = '00';
+    });
+    return;
+  }
+  const days  = Math.floor(diff / (1000*60*60*24));
+  const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+  const mins  = Math.floor((diff % (1000*60*60)) / (1000*60));
+  const secs  = Math.floor((diff % (1000*60)) / 1000);
+  document.getElementById('cd-days').textContent  = String(days).padStart(2,'0');
+  document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
+  document.getElementById('cd-mins').textContent  = String(mins).padStart(2,'0');
+  document.getElementById('cd-secs').textContent  = String(secs).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ── Waitlist form submit ─────────────────────────────────────
+async function handleWaitlist() {
+  const emailInput = document.getElementById('wl-email');
+  const btn        = document.getElementById('wl-submit');
+  const email      = emailInput.value.trim();
+  const emailRe    = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailRe.test(email)) {
+    emailInput.style.outline = '2px solid rgba(255,80,80,0.6)';
+    emailInput.focus();
+    setTimeout(() => { emailInput.style.outline = ''; }, 1800);
+    return;
+  }
+
+  btn.textContent = 'Joining...';
+  btn.disabled    = true;
+  btn.style.opacity = '0.7';
+
+  const { error } = await sb
+    .from('waitlist')
+    .insert({ email, source: 'homepage' });
+
+  if (error && error.code !== '23505') {
+    btn.textContent  = 'Try Again';
+    btn.disabled     = false;
+    btn.style.opacity = '1';
+    emailInput.style.outline = '2px solid rgba(255,80,80,0.6)';
+    setTimeout(() => { emailInput.style.outline = ''; }, 1800);
+    return;
+  }
+
+  document.getElementById('wl-form').style.display = 'none';
+  document.getElementById('wl-success').classList.add('show');
+}
+
+document.getElementById('wl-email').addEventListener('keydown', e => {
+  if (e.key === 'Enter') handleWaitlist();
 });
-const nav=document.querySelector('nav');
-if(nav){window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});}
+
+// ── Reveal + nav scroll ──────────────────────────────────────
+document.querySelectorAll('.reveal').forEach(el => {
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) el.classList.add('visible');
+  }, { threshold: 0.1 }).observe(el);
+});
+const nav = document.querySelector('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+}
 </script>
 </body>
 </html>
