@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content="Studio View launches July 4th. Join the waitlist for early access to the free studio booking and session management app."/>
-<title>Join the Waitlist — Studio View</title>
+<title>Join the Waitlist, Studio View</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <style>
@@ -563,18 +563,28 @@ footer {
   <div class="f-copy">Studio View App 2026 | Powered By Cutty TV</div>
 </footer>
 
+<!-- Supabase JS client -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-// ── Countdown to July 4, 2025 ──
+// ── Supabase config — swap in your real values ──────────────────────
+const SUPABASE_URL  = 'https://bejybnvhhbonfoigzvjo.supabase.co';
+const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJlanlibnZoaGJvbmZvaWd6dmpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA1MDg2ODYsImV4cCI6MjA5NjA4NDY4Nn0.4nD5N3nOcgwEJmayj9xDLfFifAKIL_AO_z3eii_Y0IY';
+// Find both in: Supabase Dashboard → Project Settings → API
+// ────────────────────────────────────────────────────────────────────
+
+const { createClient } = supabase;
+const sb = createClient(SUPABASE_URL, SUPABASE_ANON);
+
+// ── Countdown to July 4, 2025 ──────────────────────────────────────
 function updateCountdown() {
   const target = new Date('2025-07-04T00:00:00');
-  const now = new Date();
-  const diff = target - now;
+  const now    = new Date();
+  const diff   = target - now;
 
   if (diff <= 0) {
-    document.getElementById('cd-days').textContent = '00';
-    document.getElementById('cd-hours').textContent = '00';
-    document.getElementById('cd-mins').textContent = '00';
-    document.getElementById('cd-secs').textContent = '00';
+    ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => {
+      document.getElementById(id).textContent = '00';
+    });
     return;
   }
 
@@ -591,11 +601,13 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-// ── Form submit ──
-function handleSubmit() {
+// ── Form submit → Supabase ──────────────────────────────────────────
+async function handleSubmit() {
   const emailInput = document.getElementById('wl-email');
-  const email = emailInput.value.trim();
+  const btn        = document.getElementById('wl-submit');
+  const email      = emailInput.value.trim();
 
+  // Basic validation
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRe.test(email)) {
     emailInput.style.outline = '2px solid rgba(255,80,80,0.6)';
@@ -604,31 +616,50 @@ function handleSubmit() {
     return;
   }
 
-  // Save to localStorage so you can retrieve entries later
-  try {
-    const existing = JSON.parse(localStorage.getItem('sv_waitlist') || '[]');
-    if (!existing.includes(email)) {
-      existing.push(email);
-      localStorage.setItem('sv_waitlist', JSON.stringify(existing));
-    }
-  } catch(e) {}
+  // Loading state
+  btn.textContent = 'Joining...';
+  btn.disabled    = true;
+  btn.style.opacity = '0.7';
 
-  document.getElementById('wl-form').style.display = 'none';
+  const { error } = await sb
+    .from('waitlist')
+    .insert({ email, source: 'landing_page' });
+
+  if (error) {
+    if (error.code === '23505') {
+      // Duplicate — show success anyway, don't reveal the list
+      showSuccess();
+    } else {
+      // Real error — reset button
+      btn.textContent  = 'Try Again';
+      btn.disabled     = false;
+      btn.style.opacity = '1';
+      emailInput.style.outline = '2px solid rgba(255,80,80,0.6)';
+      setTimeout(() => { emailInput.style.outline = ''; }, 1800);
+    }
+    return;
+  }
+
+  showSuccess();
+}
+
+function showSuccess() {
+  document.getElementById('wl-form').style.display    = 'none';
   document.getElementById('wl-success').classList.add('show');
 }
 
-// Allow Enter key to submit
-document.getElementById('wl-email').addEventListener('keydown', function(e) {
+// Enter key support
+document.getElementById('wl-email').addEventListener('keydown', e => {
   if (e.key === 'Enter') handleSubmit();
 });
 
-// ── Nav scroll ──
+// ── Nav scroll ──────────────────────────────────────────────────────
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 40);
 }, { passive: true });
 
-// ── Reveal on scroll ──
+// ── Reveal on scroll ────────────────────────────────────────────────
 document.querySelectorAll('.reveal').forEach(el => {
   new IntersectionObserver(([e]) => {
     if (e.isIntersecting) el.classList.add('visible');
