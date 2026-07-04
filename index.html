@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="description" content="Studio View — The free booking and session management app for music artists and recording studios."/>
-<title>Studio View — Record with Purpose</title>
+<meta name="description" content="Studio View | The free booking and session management app for music artists and recording studios."/>
+<title>Studio View | Record with Purpose, Powered by Cutty TV</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <style>
 :root {
@@ -248,129 +248,112 @@ footer { padding: 36px 52px; border-top: 1px solid rgba(0,200,255,0.08); display
 .mockup-tag.pending{background:rgba(255,160,0,0.1);color:#ffa000;border-color:rgba(255,160,0,0.2);}
 .mockup-stat{background:var(--black);border:1px solid rgba(0,200,255,0.08);border-radius:8px;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;}
 
-/* ── WAITLIST SECTION ── */
+/* ── STUDIO VIEW LIVE SECTION ── */
 .waitlist-section {
   padding: 100px 40px;
   background: linear-gradient(to bottom, var(--black), var(--black2));
   border-top: 1px solid rgba(0,200,255,0.06);
   border-bottom: 1px solid rgba(0,200,255,0.06);
-  position: relative; z-index: 1; overflow: hidden;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
+
 .waitlist-section::before {
   content: '';
-  position: absolute; top: -100px; left: 50%; transform: translateX(-50%);
-  width: 800px; height: 600px;
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 600px;
   background: radial-gradient(ellipse, rgba(0,200,255,0.05) 0%, transparent 70%);
   pointer-events: none;
 }
+
 .waitlist-inner {
-  max-width: 680px; margin: 0 auto; text-align: center; position: relative;
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
 }
+
 .waitlist-launch-tag {
-  display: inline-flex; align-items: center; gap: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   background: rgba(0,200,255,0.06);
   border: 1px solid rgba(0,200,255,0.2);
-  border-radius: 40px; padding: 8px 20px;
-  font-size: 11px; letter-spacing: 2.5px; color: var(--blue);
-  font-family: 'Rajdhani', sans-serif; font-weight: 700;
-  text-transform: uppercase; margin-bottom: 28px;
+  border-radius: 40px;
+  padding: 8px 20px;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  color: var(--blue);
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 28px;
 }
+
 .wl-badge-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--blue); box-shadow: 0 0 8px var(--blue);
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--blue);
+  box-shadow: 0 0 8px var(--blue);
   animation: blink 2s ease-in-out infinite;
 }
+
 .waitlist-section h2 {
   font-size: clamp(38px, 5vw, 68px);
-  font-weight: 700; letter-spacing: -2px; line-height: 0.95;
-  text-transform: uppercase; margin-bottom: 16px;
+  font-weight: 700;
+  letter-spacing: -2px;
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin-bottom: 16px;
 }
-.waitlist-section h2 em { font-style: normal; color: var(--blue); }
+
+.waitlist-section h2 em {
+  font-style: normal;
+  color: var(--blue);
+}
+
 .waitlist-section .wl-sub {
-  font-size: 16px; color: var(--muted); line-height: 1.75;
-  font-weight: 300; margin-bottom: 48px; max-width: 480px; margin-left: auto; margin-right: auto;
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.75;
+  font-weight: 300;
+  margin-bottom: 48px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-/* Countdown */
-.wl-countdown {
-  display: flex; gap: 4px; justify-content: center; margin-bottom: 44px;
-}
-.wl-cd-block {
-  display: flex; flex-direction: column; align-items: center;
-  background: var(--gray2); border: 1px solid rgba(0,200,255,0.12);
-  border-radius: var(--radius-lg); padding: 18px 24px; min-width: 82px;
-}
-.wl-cd-num {
-  font-family: 'Rajdhani', sans-serif; font-size: 40px; font-weight: 700;
-  line-height: 1; color: var(--blue);
-  text-shadow: 0 0 24px rgba(0,200,255,0.4); letter-spacing: -1px;
-}
-.wl-cd-label {
-  font-size: 9px; letter-spacing: 3px; color: var(--muted);
-  font-family: 'Rajdhani', sans-serif; font-weight: 700;
-  text-transform: uppercase; margin-top: 6px;
-}
-.wl-cd-sep {
-  font-family: 'Rajdhani', sans-serif; font-size: 32px; font-weight: 700;
-  color: rgba(0,200,255,0.25); display: flex; align-items: center;
-  padding-bottom: 18px;
-}
-
-/* Inline form */
-.wl-form-wrap { max-width: 500px; margin: 0 auto; }
-.wl-form {
-  display: flex; gap: 0;
-  background: var(--gray2);
-  border: 1px solid rgba(0,200,255,0.18);
-  border-radius: var(--radius); overflow: hidden;
-  box-shadow: 0 0 40px rgba(0,200,255,0.06);
-  transition: border-color 0.25s, box-shadow 0.25s;
-}
-.wl-form:focus-within {
-  border-color: rgba(0,200,255,0.4);
-  box-shadow: 0 0 32px rgba(0,200,255,0.12);
-}
-.wl-input {
-  flex: 1; min-width: 0; background: transparent;
-  border: none; outline: none; padding: 16px 20px;
-  font-family: 'DM Sans', sans-serif; font-size: 15px;
-  color: var(--white); font-weight: 300;
-}
-.wl-input::placeholder { color: var(--muted); }
-.wl-btn {
-  background: var(--blue); color: var(--black);
-  border: none; cursor: pointer; font-family: 'Rajdhani', sans-serif;
-  font-size: 13px; font-weight: 700; letter-spacing: 2px;
-  text-transform: uppercase; padding: 16px 24px;
-  transition: all 0.22s; white-space: nowrap; flex-shrink: 0;
-}
-.wl-btn:hover { background: var(--white); }
-.wl-success {
-  display: none; flex-direction: column; align-items: center; gap: 10px;
-  padding: 24px 32px;
-  background: var(--gray2); border: 1px solid rgba(0,200,255,0.25);
-  border-radius: var(--radius-lg); box-shadow: 0 0 40px rgba(0,200,255,0.08);
-}
-.wl-success.show { display: flex; }
-.wl-success-icon {
-  width: 48px; height: 48px; border-radius: 50%;
-  background: rgba(0,200,255,0.08); border: 1.5px solid rgba(0,200,255,0.3);
-  display: flex; align-items: center; justify-content: center; color: var(--blue);
-}
-.wl-success h3 { font-size: 20px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-.wl-success p { font-size: 14px; color: var(--muted); font-weight: 300; text-align: center; }
-.wl-note { margin-top: 14px; font-size: 12px; color: #1a2a38; letter-spacing: 0.8px; }
 
 /* Perks row */
 .wl-perks {
-  display: flex; justify-content: center; gap: 32px;
-  flex-wrap: wrap; margin-top: 48px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 48px;
 }
+
 .wl-perk {
-  display: flex; align-items: center; gap: 10px;
-  font-size: 13px; color: var(--muted); font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 300;
 }
-.wl-perk-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--blue); flex-shrink: 0; }
+
+.wl-perk-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--blue);
+  flex-shrink: 0;
+}
 
 /* RESPONSIVE */
 @media (max-width: 1020px) {
@@ -380,57 +363,184 @@ footer { padding: 36px 52px; border-top: 1px solid rgba(0,200,255,0.08); display
   .section { padding: 72px 32px; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
 }
+
 @media (max-width: 900px) {
-  .steps{grid-template-columns:1fr;}
-  .pricing-grid,.testi-grid{grid-template-columns:1fr;max-width:500px;margin-left:auto;margin-right:auto;}
-  .for-grid{grid-template-columns:1fr;}
-  .stats-inner{flex-direction:column;}
-  .stat-item{border-right:none;border-bottom:1px solid rgba(0,200,255,0.08);}
-  .stat-item:last-child{border-bottom:none;}
+  .steps { grid-template-columns: 1fr; }
+  .pricing-grid,
+  .testi-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .for-grid { grid-template-columns: 1fr; }
+  .stats-inner { flex-direction: column; }
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(0,200,255,0.08);
+  }
+  .stat-item:last-child { border-bottom: none; }
 }
+
 @media (max-width: 768px) {
-  nav { position: fixed; height: 56px; padding: 0 16px; flex-direction: row; align-items: center; justify-content: space-between; gap: 0; }
-  .logo { width: auto; justify-content: flex-start; }
-  .logo-text { font-size: 17px; letter-spacing: 1.8px; }
-  .logo-img { width: 32px; height: 32px; }
+  nav {
+    position: fixed;
+    height: 56px;
+    padding: 0 16px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .logo {
+    width: auto;
+    justify-content: flex-start;
+  }
+
+  .logo-text {
+    font-size: 17px;
+    letter-spacing: 1.8px;
+  }
+
+  .logo-img {
+    width: 32px;
+    height: 32px;
+  }
+
   .nav-links { display: none; }
-  .nav-actions { display: flex; flex-direction: row; gap: 8px; width: auto; }
-  .nav-login, .nav-cta { width: auto; min-height: 34px; padding: 7px 13px; font-size: 11px; letter-spacing: 1.2px; border-radius: 6px; display: flex; align-items: center; justify-content: center; white-space: nowrap; }
+
+  .nav-actions {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    width: auto;
+  }
+
+  .nav-login,
+  .nav-cta {
+    width: auto;
+    min-height: 34px;
+    padding: 7px 13px;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
   .page-hero { padding: 84px 20px 56px; }
   .section { padding: 56px 20px; }
   .s-title { font-size: clamp(28px,8vw,42px); }
-  .grid-3, .grid-2 { grid-template-columns: 1fr; gap: 12px; }
+  .grid-3,
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
   .card { padding: 24px 20px; }
   .card:hover { transform: none; }
   .price-card:hover { transform: none; }
+
   .bottom-cta { padding: 72px 20px; }
-  footer { padding: 28px 20px; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
-  .f-logo { justify-content: center; width: 100%; }
-  .f-links { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 0; }
-  .f-links a { display: block; padding: 8px 0; border-bottom: 1px solid rgba(0,200,255,0.05); font-size: 14px; color: var(--muted); width: 100%; text-align: center; }
+
+  footer {
+    padding: 28px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .f-logo {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .f-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .f-links a {
+    display: block;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(0,200,255,0.05);
+    font-size: 14px;
+    color: var(--muted);
+    width: 100%;
+    text-align: center;
+  }
+
   .f-links a:last-child { border-bottom: none; }
-  .f-copy { text-align: center; width: 100%; }
-  .hero{padding:60px 20px 56px;min-height:auto;}
-  .hero h1{font-size:clamp(42px,13vw,64px);letter-spacing:-2px;}
-  .hero-sub{font-size:16px;}
-  .hero-actions{flex-direction:column;width:100%;max-width:320px;margin:0 auto;}
-  .btn-primary,.btn-outline{width:100%;padding:15px 20px;}
-  .stats-bar{padding:32px 20px;}
-  .ix-section,.steps-section,.pricing-section{padding-left:20px;padding-right:20px;}
-  .for-section{padding:60px 20px;}
-  .mockup-content{grid-template-columns:1fr;padding:16px;}
-  .testi-section{padding:60px 20px;}
-  .bottom-cta .btn-primary{width:100%;max-width:340px;}
-  .waitlist-section { padding: 72px 20px; }
-  .wl-countdown { gap: 3px; }
-  .wl-cd-block { padding: 14px 16px; min-width: 68px; }
-  .wl-cd-num { font-size: 32px; }
-  .wl-cd-sep { font-size: 24px; padding-bottom: 14px; }
-  .wl-form { flex-direction: column; }
-  .wl-input { padding: 16px 18px; }
-  .wl-btn { padding: 16px; width: 100%; font-size: 14px; }
-  .wl-perks { gap: 16px; flex-direction: column; align-items: center; }
+  .f-copy {
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero {
+    padding: 60px 20px 56px;
+    min-height: auto;
+  }
+
+  .hero h1 {
+    font-size: clamp(42px,13vw,64px);
+    letter-spacing: -2px;
+  }
+
+  .hero-sub { font-size: 16px; }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    padding: 15px 20px;
+  }
+
+  .stats-bar { padding: 32px 20px; }
+
+  .ix-section,
+  .steps-section,
+  .pricing-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .for-section { padding: 60px 20px; }
+  .mockup-content {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+
+  .testi-section { padding: 60px 20px; }
+
+  .bottom-cta .btn-primary {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .waitlist-section {
+    padding: 72px 20px;
+  }
+
+  .wl-perks {
+    gap: 16px;
+    flex-direction: column;
+    align-items: center;
+  }
 }
+
 @media (max-width: 480px) {
   .nav-actions { grid-template-columns: 1fr; }
   .f-links { grid-template-columns: 1fr; }
@@ -440,16 +550,27 @@ footer { padding: 36px 52px; border-top: 1px solid rgba(0,200,255,0.08); display
 <body>
 <nav>
   <a href="index.html" class="logo">
-    <div class="logo-img"><img src="https://i.imgur.com/so3dDyB.png" alt="Studio View"/></div>
+    <div class="logo-img">
+      <img src="https://i.imgur.com/so3dDyB.png" alt="Studio View"/>
+    </div>
     <span class="logo-text">Studio <span>View</span></span>
   </a>
-  <ul class="nav-links"><li><a href="how-it-works.html">How It Works</a></li><li><a href="for-studios.html">For Studios</a></li><li><a href="for-artists.html">For Artists</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact</a></li></ul>
+
+  <ul class="nav-links">
+    <li><a href="how-it-works.html">How It Works</a></li>
+    <li><a href="for-studios.html">For Studios</a></li>
+    <li><a href="for-artists.html">For Artists</a></li>
+    <li><a href="pricing.html">Pricing</a></li>
+    <li><a href="faq.html">FAQ</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+
   <div class="nav-actions">
-    <a href="waitlist.html" class="nav-login">Log In</a>
-    <a href="waitlist.html" class="nav-cta">Sign Up Free</a>
+    <a href="https://app.studioviewapp.com/" class="nav-login">Log In</a>
+    <a href="https://app.studioviewapp.com/" class="nav-cta">Sign Up Free</a>
   </div>
 </nav>
-
+  
 <!-- HERO -->
 <section class="hero">
   <div class="hero-orb"></div>
@@ -468,10 +589,10 @@ footer { padding: 36px 52px; border-top: 1px solid rgba(0,200,255,0.08); display
   <p class="hero-motto">Record with <span>Purpose.</span></p>
   <p class="hero-sub">The free booking and session management app built for music artists and recording studios. Find studios. Book sessions. Get paid.</p>
   <div class="hero-actions">
-    <a href="waitlist.html" class="btn-primary">Join the Waitlist →</a>
+    <a href="https://app.studioviewapp.com/" class="btn-primary">Join Today →</a>
     <a href="how-it-works.html" class="btn-outline">See How It Works</a>
   </div>
-  <p class="hero-note">Launching July 4th · Free to sign up · No credit card required</p>
+  <p class="hero-note">Officially Out Now · Free to sign up · No credit card required</p>
   <div class="hero-mockup" style="position:relative;z-index:1;margin-top:80px;width:100%;max-width:960px;">
     <div class="mockup-bar">
       <div class="mockup-dot" style="background:#ff5f57"></div>
@@ -624,7 +745,7 @@ footer { padding: 36px 52px; border-top: 1px solid rgba(0,200,255,0.08); display
           <li><span class="check">✓</span> Send booking requests (limited per month)</li>
           <li><span class="check">✓</span> Book studio time</li>
         </ul>
-        <a href="waitlist.html" class="price-btn ghost">Get Started Free</a>
+        <a href="https://app.studioviewapp.com/" class="price-btn ghost">Get Started Free</a>
       </div>
       <div class="price-card featured">
         <div class="price-badge">Most Popular</div>
@@ -643,7 +764,7 @@ footer { padding: 36px 52px; border-top: 1px solid rgba(0,200,255,0.08); display
           <li><span class="check">✓</span> Up to $2 credit rollover per cycle</li>
           <li><span class="check">✓</span> Priority support</li>
         </ul>
-        <a href="waitlist.html" class="price-btn solid">Start Artist Select</a>
+        <a href="https://app.studioviewapp.com/" class="price-btn solid">Start Artist Select</a>
       </div>
       <div class="price-card">
         <div class="price-tier">Artist Gold</div>
@@ -704,79 +825,35 @@ footer { padding: 36px 52px; border-top: 1px solid rgba(0,200,255,0.08); display
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════
-     WAITLIST SECTION
+     STUDIO VIEW LIVE SECTION
      ═══════════════════════════════════════════════════════════ -->
-<section class="waitlist-section" id="waitlist">
+<section class="waitlist-section" id="launch">
   <div class="waitlist-inner">
 
     <div class="waitlist-launch-tag reveal">
       <div class="wl-badge-dot"></div>
-      Launching July 4th, 2026
+      Studio View Is Live
     </div>
 
     <h2 class="reveal">
-      Be First<br/>
-      <em>In the Door.</em>
+      Create Your Profile.<br/>
+      <em>Record With Purpose.</em>
     </h2>
 
     <p class="wl-sub reveal">
-      Studio View drops July 4th. Join the waitlist now for early access, a founding member badge, and first access before we open to the public.
+      Studio View is officially open. Build your creator profile, connect with studios and artists, and start turning your work into real opportunities.
     </p>
 
-    <!-- Countdown -->
-    <div class="wl-countdown reveal">
-      <div class="wl-cd-block">
-        <div class="wl-cd-num" id="cd-days">--</div>
-        <div class="wl-cd-label">Days</div>
-      </div>
-      <div class="wl-cd-sep">:</div>
-      <div class="wl-cd-block">
-        <div class="wl-cd-num" id="cd-hours">--</div>
-        <div class="wl-cd-label">Hours</div>
-      </div>
-      <div class="wl-cd-sep">:</div>
-      <div class="wl-cd-block">
-        <div class="wl-cd-num" id="cd-mins">--</div>
-        <div class="wl-cd-label">Mins</div>
-      </div>
-      <div class="wl-cd-sep">:</div>
-      <div class="wl-cd-block">
-        <div class="wl-cd-num" id="cd-secs">--</div>
-        <div class="wl-cd-label">Secs</div>
-      </div>
-    </div>
-
-    <!-- Inline email form — posts to Supabase -->
-    <div class="wl-form-wrap reveal" id="wl-form-area">
-      <div class="wl-form" id="wl-form">
-        <input
-          type="email"
-          class="wl-input"
-          id="wl-email"
-          placeholder="Enter your email to join the waitlist"
-          autocomplete="email"
-        />
-        <button class="wl-btn" id="wl-submit" onclick="handleWaitlist()">
-          Notify Me →
-        </button>
-      </div>
-      <div class="wl-success" id="wl-success">
-        <div class="wl-success-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <h3>You're on the list.</h3>
-        <p>We'll hit you when Studio View goes live.<br/>Check your inbox for a confirmation.</p>
-      </div>
-      <p class="wl-note">No spam. Just your launch notification.</p>
-    </div>
-
-    <!-- Perks row -->
     <div class="wl-perks reveal">
-      <div class="wl-perk"><div class="wl-perk-dot"></div>Early access</div>
-      <div class="wl-perk"><div class="wl-perk-dot"></div>Founding member badge</div>
-      <div class="wl-perk"><div class="wl-perk-dot"></div>Free forever</div>
-      <div class="wl-perk"><div class="wl-perk-dot"></div>No credit card</div>
+      <div class="wl-perk"><div class="wl-perk-dot"></div>Creator profiles</div>
+      <div class="wl-perk"><div class="wl-perk-dot"></div>Studio connections</div>
+      <div class="wl-perk"><div class="wl-perk-dot"></div>Artist discovery</div>
+      <div class="wl-perk"><div class="wl-perk-dot"></div>Built for creators</div>
     </div>
+
+    <a href="https://app.studioviewapp.com/" class="btn-primary" style="margin-top:36px;font-size:15px;padding:18px 52px;letter-spacing:3px;">
+      Launch Studio View →
+    </a>
 
   </div>
 </section>
@@ -785,9 +862,9 @@ footer { padding: 36px 52px; border-top: 1px solid rgba(0,200,255,0.08); display
 <section class="bottom-cta">
   <div class="cta-orb"></div>
   <h2>Ready to Record<br/><span>with Purpose?</span></h2>
-  <p>Join hundreds of studios and artists already on Studio View.<br/>Free to sign up. Always.</p>
-  <a href="waitlist.html" class="btn-primary" style="font-size:15px;padding:18px 52px;letter-spacing:3px;">Join the Waitlist →</a>
-  <p style="margin-top:20px;font-size:12px;color:#222c35;letter-spacing:1px;">No credit card. No commitment. Just music.</p>
+  <p>Studio View is officially live.<br/>Create your profile and start building your creative network today.</p>
+  <a href="https://app.studioviewapp.com/" class="btn-primary" style="font-size:15px;padding:18px 52px;letter-spacing:3px;">Open Studio View →</a>
+  <p style="margin-top:20px;font-size:12px;color:#222c35;letter-spacing:1px;">No waiting list. No delay. Just create.</p>
 </section>
 
 <!-- FOOTER -->
@@ -807,81 +884,14 @@ footer { padding: 36px 52px; border-top: 1px solid rgba(0,200,255,0.08); display
   <div class="f-copy">Studio View App 2026 | Powered By Cutty TV</div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
-// ── Supabase config ──────────────────────────────────────────
-const SUPABASE_URL  = 'https://bejybnvhhbonfoigzvjo.supabase.co';
-const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJlanlibnZoaGJvbmZvaWd6dmpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA1MDg2ODYsImV4cCI6MjA5NjA4NDY4Nn0.4nD5N3nOcgwEJmayj9xDLfFifAKIL_AO_z3eii_Y0IY'; // swap in your real anon key
-const { createClient } = supabase;
-const sb = createClient(SUPABASE_URL, SUPABASE_ANON);
-
-// ── Countdown ────────────────────────────────────────────────
-function updateCountdown() {
-  const target = new Date('2026-07-04T00:00:00');
-  const diff   = target - new Date();
-  if (diff <= 0) {
-    ['cd-days','cd-hours','cd-mins','cd-secs'].forEach(id => {
-      document.getElementById(id).textContent = '00';
-    });
-    return;
-  }
-  const days  = Math.floor(diff / (1000*60*60*24));
-  const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-  const mins  = Math.floor((diff % (1000*60*60)) / (1000*60));
-  const secs  = Math.floor((diff % (1000*60)) / 1000);
-  document.getElementById('cd-days').textContent  = String(days).padStart(2,'0');
-  document.getElementById('cd-hours').textContent = String(hours).padStart(2,'0');
-  document.getElementById('cd-mins').textContent  = String(mins).padStart(2,'0');
-  document.getElementById('cd-secs').textContent  = String(secs).padStart(2,'0');
-}
-updateCountdown();
-setInterval(updateCountdown, 1000);
-
-// ── Waitlist form submit ─────────────────────────────────────
-async function handleWaitlist() {
-  const emailInput = document.getElementById('wl-email');
-  const btn        = document.getElementById('wl-submit');
-  const email      = emailInput.value.trim();
-  const emailRe    = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  if (!emailRe.test(email)) {
-    emailInput.style.outline = '2px solid rgba(255,80,80,0.6)';
-    emailInput.focus();
-    setTimeout(() => { emailInput.style.outline = ''; }, 1800);
-    return;
-  }
-
-  btn.textContent = 'Joining...';
-  btn.disabled    = true;
-  btn.style.opacity = '0.7';
-
-  const { error } = await sb
-    .from('waitlist')
-    .insert({ email, source: 'homepage' });
-
-  if (error && error.code !== '23505') {
-    btn.textContent  = 'Try Again';
-    btn.disabled     = false;
-    btn.style.opacity = '1';
-    emailInput.style.outline = '2px solid rgba(255,80,80,0.6)';
-    setTimeout(() => { emailInput.style.outline = ''; }, 1800);
-    return;
-  }
-
-  document.getElementById('wl-form').style.display = 'none';
-  document.getElementById('wl-success').classList.add('show');
-}
-
-document.getElementById('wl-email').addEventListener('keydown', e => {
-  if (e.key === 'Enter') handleWaitlist();
-});
-
 // ── Reveal + nav scroll ──────────────────────────────────────
 document.querySelectorAll('.reveal').forEach(el => {
   new IntersectionObserver(([e]) => {
     if (e.isIntersecting) el.classList.add('visible');
   }, { threshold: 0.1 }).observe(el);
 });
+
 const nav = document.querySelector('nav');
 if (nav) {
   window.addEventListener('scroll', () => {
@@ -889,5 +899,7 @@ if (nav) {
   }, { passive: true });
 }
 </script>
+</body>
+</html>
 </body>
 </html>
